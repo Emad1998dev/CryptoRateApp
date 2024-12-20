@@ -15,7 +15,7 @@ namespace CryptoRateApp.Services
 
         public async Task<Dictionary<string, decimal>> GetCryptoRatesAsync(string cryptoCode)
         {
-            var apiKey = "e8785008-760d-4664-8d8c-5b5d2051347e"; // کلید API
+            var apiKey = "your api key"; // کلید API
             var symbols = new[] { "USD", "EUR", "GBP", "BRL", "AUD" };
             var rates = new Dictionary<string, decimal>();
 
