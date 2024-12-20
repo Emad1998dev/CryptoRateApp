@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Crypto Rates";
+    var rates = ViewBag.Rates as Dictionary<string, decimal>; // مطمئن شوید که نوع ViewBag.Rates صحیح است.
+    var cryptoCode = ViewBag.CryptoCode as string;
+}
+
+<h2>Exchange Rates for @cryptoCode</h2>
+
+@if (rates != null && rates.Count > 0)
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Currency</th>
+                <th>Rate</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var rate in rates)
+            {
+                <tr>
+                    <td>@rate.Key</td>
+                    <td>@rate.Value</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p style="color: red;">No data available for the selected cryptocurrency.</p>
+}

@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Crypto Index";
+}
+
+<h2>Select Cryptocurrency</h2>
+
+<form asp-action="Rates" asp-controller="Crypto" method="get">
+    <div>
+        <label for="cryptoCode">Choose a cryptocurrency:</label>
+        <select id="cryptoCode" name="cryptoCode" required>
+            <option value="BTC">Bitcoin (BTC)</option>
+            <option value="ETH">Ethereum (ETH)</option>
+            <option value="BNB">Binance Coin (BNB)</option>
+            <option value="ADA">Cardano (ADA)</option>
+            <option value="SOL">Solana (SOL)</option>
+            <option value="DOGE">Dogecoin (DOGE)</option>
+        </select>
+    </div>
+    <div>
+        <button type="submit">Get Rates</button>
+    </div>
+</form>
